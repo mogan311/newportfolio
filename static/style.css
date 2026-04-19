@@ -1,0 +1,737 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+body{
+    background: linear-gradient(
+        to bottom,
+        #003B26 0%,
+        #003B26 20%,
+        #E3D2B4 20%,
+        #E3D2B4 100%
+    );
+}
+
+.options{
+    background-color: #003B26;
+    color: #F3EEE1;
+    width: 100%;
+    height: 120px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    margin-bottom: 200px;
+    opacity: 0.8;
+
+    transition: transform 0.3s ease-in-out;
+}
+
+.options.hide-nav {
+    /* translateY(-100%) pushes it up by exactly its own height using the GPU */
+    transform: translateY(-100%); 
+}
+
+.options h1{
+    font-weight: 300;
+    font-size: 48px;
+    padding-top: 30px;
+    padding-left: 30px;
+    display: inline-block;
+
+}
+.options ul,
+.options li{
+    display: inline-block;
+}
+.options ul{
+    margin-left: 350px;
+}
+.options li{
+    padding: 20px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.options li:hover {
+    text-decoration: underline;
+}
+
+/* .intro{
+    display: inline-block;
+    background-color: white;
+    width: 80%;
+    height: 600px;
+    border-radius: 50px;
+    border: none;
+    margin-left: 120px;
+    z-index: 3;
+} */
+
+.intro{
+    background-color: #ffffff;
+    width: 90%;
+    height: auto;
+    min-height: 600px;
+    border-radius: 50px;
+    border: none;
+    margin: 160px auto 0 auto; 
+    position: relative;
+    z-index: 2;
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.name{
+    display: inline-block;
+    background-color: transparent;
+    color: #333333;
+    padding: 10px;
+    font-size: 48px;
+    margin-top: 70px;
+    margin-left: 50px;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    letter-spacing: -0.5px;
+}
+.role{
+    color: #333333;
+    margin-left: 60px;
+    font-style: italic;
+    text-decoration: underline;
+    margin-bottom: 40px;
+}
+.intro h3{
+    margin-left: 60px;
+    color: #333333;
+    padding: 5px;
+}
+
+.intro p{
+    padding: 20px;
+}
+
+.intro a{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #0a6b4f;
+    font-size: 20px;
+    margin: 15px;
+    margin-left: 60px;
+}
+.intro a i{
+    background: #0a6b4f;
+    display: inline;
+    color: white;
+    padding: 5px;
+    border-radius: 6px;
+    font-size: 18px;
+    width: 20px;
+    text-align: center;
+}
+.intro a:hover{
+    opacity: 0.7;
+}
+
+.photo{
+    position: absolute;
+    top: 100px;   
+    right: 50px; 
+    width: 600px;
+    height: 500px;
+}
+
+
+.beigebackgroundcolor{
+    display: inline-block;
+    background-color: #E3D2B4;
+    width: 100%;
+    height: auto;
+    margin-top: -100px;
+    z-index: 2;
+    padding-bottom: 200px;
+}
+
+.beigebackgroundcolor h1{
+    margin-top: 100px;
+    padding-top: 40px;
+    margin-left: 250px;
+    font-size: 40px;
+}
+
+.beigebackgroundcolor p{
+    padding-top: 40px;
+    margin-left: 250px;
+    margin-right: 250px;
+    line-height: 1.8;
+    font-size: 20px;
+    color: #0a6b4f;
+}
+
+.beigebackgroundcolor h2{
+    padding-top: 40px;
+    margin-left: 250px;
+    font-size: 40px;
+}
+
+.beigebackgroundcolor ul{
+    margin-left: 250px;
+    color: #0a6b4f;
+    font-size: 20px;
+    padding-top: 40px;
+    display: inline-block;
+}
+
+.beigebackgroundcolor li{
+    padding: 10px;
+    display: inline-block;
+}
+
+.degree{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.department{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.collegename{
+    font-size: 18.5px;
+}
+
+.collegeplace{
+    font-size: 18.5px;
+}
+.cgpabox{
+    width: 170px;
+    height: 100px;
+    background-color: #0a6b4f;
+    color: white;
+    border-radius: 10px;
+    margin-left: 70%;
+    display: block;
+    margin-top: -160px;
+}
+
+.cgpabox h3{
+    padding: 10px;
+    margin-left: 100px;
+}
+.cgpabox h4{
+    padding: 10px;
+    font-size: 40px;
+    letter-spacing: 2px;
+    margin-left: 7px;
+}
+
+.skills{
+    font-size: 50px;
+    margin-bottom: 100px;
+}
+
+.container{
+    display: flex;
+    justify-content: center;   /* center horizontally */
+    gap: 30px;                 /* space between boxes */
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.skillsouterbox{
+    background-color: white;
+    color: black;
+    width: 350px;
+    height: 400px;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    border-radius: 20px;
+    margin-bottom: 100px;
+}
+
+.skillsouterbox:hover{
+    border-left: 6px solid #0a6b4f;
+}
+
+
+.skillsouterbox h1{
+    padding: 10px;
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.skillsinnerbox{
+    width: 240px;
+    height: 20px;
+    border-radius: 12px;
+    border: solid;
+    padding: 10px;
+    display: inline-block;
+    margin-top: 20px;
+    margin-left: 40px;
+    background-color:#0a6b4f;
+    color: white;
+
+    display: flex;          /* ✅ ADD THIS */
+    align-items: center;    /* ✅ PERFECT VERTICAL ALIGN */
+    gap: 10px;
+
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+.skillsinnerbox:hover{
+    transform: translateY(-5px);   /* move up */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.projectname{
+    font-size: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.projecttitlebox{
+    display: inline-block;
+    background-color:#333333;
+    color: aqua;
+    width: 390px;
+    height: 47.5px;
+    margin-bottom: 100px;
+    margin-left: 35%;
+    border-radius: 10px;
+}
+
+.academic {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: #333333;
+    color: white;
+}
+.academic:hover{
+    cursor: pointer;
+}
+
+.devops {
+    display: inline-block;
+    margin-top: 5px;
+    margin-left: 10px;
+    font-size: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+    border: none;
+    background-color: #333333;
+    color: white;
+
+}
+.devops:hover{
+    cursor: pointer;
+}
+
+.projectouterbox{
+    width: 90%;
+    max-width: 975px;
+    background-color: #B55222;
+    margin: 20px auto; 
+    border-radius: 20px;
+    overflow: hidden; 
+    transition: all 0.3s ease;
+}
+
+.mainbox{
+    display: flex;          /* This forces them side-by-side */
+    align-items: center;    /* This perfectly centers them vertically */
+    padding: 20px;
+    gap: 20px;              /* Adds space between the icon, text, and arrow */
+    cursor: pointer;
+}
+
+.projecticonbox{
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    background-color:#E3D2B4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0; /* Prevents the box from getting squished */
+}
+
+.projecticonbox i, 
+.projecticonbox svg{
+    width: 40px;
+    height: 40px;
+    color: black;
+    stroke-width: 2.5px;
+}
+
+.projecttitlearea {
+    flex-grow: 1; /* WHY: This takes up all remaining empty space, pushing the chevron arrow to the far right */
+    display: flex;
+    flex-direction: column; /* WHY: Stacks the Title on top of the Date */
+}
+
+.projecttitlearea h2{
+    color: #F3EEE1;
+    font-size: 22.5px;
+    font-weight: bold;
+}
+
+.projecttitlearea span {
+    font-size: 14px;
+    color: #E3D2B4; /* Lighter beige for the date */
+}
+
+.dropdown i {
+    color: white;
+    width: 24px;
+    height: 24px;
+    transition: transform 0.3s ease;
+}
+
+.subbox {
+    max-height: 0; 
+    padding: 0 60px; 
+    color:beige;
+    font-size: 15px;
+    line-height: 1.6;
+    transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+}
+
+.projectouterbox.active .subbox {
+    max-height: 300px; /* WHY: Gives the text room to appear */
+    padding-bottom: 20px; /* WHY: Adds breathing room at the bottom of the text */
+}
+
+.projectouterbox.active .dropdown i {
+    transform: rotate(180deg);
+}
+
+/* This is the master switch that the Javascript will use to hide things */
+.hidden {
+    display: none !important;
+}
+
+.academic.active {
+    background-color: white; /* Example color */
+    color:#333333;
+}
+
+.devops.active {
+    background-color: white; /* Example color */
+    color: #333333;
+}
+
+.experience{
+    font-size: 55px;
+    margin-top: 100px;
+    margin-bottom: 50px;
+    padding: 20px;
+}
+
+.Experiencebox{
+    background-color: white;
+    width: 750px;
+    height: 500px;
+    color:#0a6b4f;
+    margin-left: 250px;
+    padding: 30px;
+    border-radius: 20px;
+}
+.Experiencebox h2{
+    padding: 5px;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.Experiencebox h3{
+    padding: 5px;
+    font-size: 25px;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.Experiencebox h4{
+    padding: 5px;
+    font-size: 20px;
+    margin-bottom: 32.5px;
+}
+
+.Experiencebox li{
+    padding: 5px;
+    font-size: 17.5px;
+    display: list-item;
+    margin-left: 40px;
+    justify-content: center;
+    font-family: 'Libre Franklin', sans-serif;
+    margin-right: 20px;
+}
+
+.Experiencebox a{
+    font-size: 17.5px;
+    margin-bottom: 15px;
+}
+
+.Experiencebox i{
+    padding: 5px;
+    font-size: 15px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+}
+
+.achievename{
+    margin-top: 30px;
+    padding-top: 40px;
+    font-size: 40px;
+    margin-left: 60px;
+    margin-bottom: 50px;
+}
+
+.achievement-container{
+    display: flex;
+    gap: 30px;
+    margin-left: 60px;
+    margin-bottom: 40px;
+    flex-wrap: wrap; /* prevents overflow on small screens */
+}
+
+.achievementbox{
+    width: 44%;
+    height: 200px;
+    background-color:#003B26;
+    color: white;
+    margin: 0;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row; /*fix*/
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-start;
+    padding: 10px;
+    height: 200px;
+    overflow: hidden;
+
+    transition: 0.3s ease;
+}
+
+.achieveiconbox{
+    width: 48px;
+    height: 48px;
+    background-color: white;
+    color: #0a6b4f;
+    margin: 20px;
+    border-radius: 10px;
+}
+.achieveiconbox i{
+    padding: 9px;
+    font-size: 30px;
+}
+.achievement-content h3{
+    margin-left: 21px;
+    font-size: 25px;
+}
+.achievement-content h4{
+    margin-left: 21px;
+    padding-top: 9px;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 100;
+    color: black;
+    flex: 1;
+}
+.achievement-content button{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-right: 7px;
+    padding-left: 7px;
+    margin-left: 21px;
+    font-size: 15px;
+    margin-top: 10px;
+    border-radius: 70px;
+    border: none;
+    color: #333333;
+}
+
+.achievementbox:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+
+.nameconnect{
+    margin-top: 30px;
+    padding-top: 40px;
+    font-size: 40px;
+    margin-bottom: 50px;
+}
+
+hr {
+    border: none;
+    height: 4px;
+    background-color:#333333;
+}
+
+.contactbox{
+    color: #0a6b4f;
+    padding: 10px;
+}
+
+.contactbox h1{
+    margin-top: 80px;
+    font-size: 55px;
+    margin-left: 50px;
+}
+
+.contactbox h2{
+    font-size: 55px;
+    margin-left: 130px;
+    margin-bottom: 60px;
+    font-weight: 100;
+}
+
+.contactbox a{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: #0a6b4f;
+    font-size: 20px;
+    margin: 20px;
+    margin-left: 60px;
+}
+.contactbox a i{
+    background: #C9972E;
+    display: inline;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 25px;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+}
+.contactbox a:hover{
+    opacity: 0.8;
+    padding-left: 5px;
+}
+
+.messagebox{
+    width: 450px;
+    height: 530px;
+    background-color: #B55222;
+    color: #ffffff;
+    border-radius: 30px;
+    padding: 10px;
+    padding-top: 40px;
+
+    margin-left: 55%;
+    margin-top: -260px;
+    margin-bottom: 45px;
+}
+
+.messageinput{
+    
+    margin-left: 20px;
+    font-size: 20px;
+    border: none;
+    margin-top: 20px;
+    background-color: #B55222;
+    color: #ffffff;
+    border-bottom: solid wheat;
+    width: 400px;
+    margin-bottom: 20px;
+}
+input:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+input::placeholder{
+    color: #ffffff;
+}
+
+.description{
+    margin-left: 20px;
+    font-size: 20px;
+    margin-top: 20px;
+    background-color: #B55222;
+    color: #ffffff;
+    border: solid wheat;
+    width: 400px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+textarea::placeholder{
+    color: #ffffff;
+}
+
+textarea:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.messagebox button{
+    width: 410px;
+    padding: 10px;
+    margin-left: 18px;
+    font-size: 17.5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.messagebox button:hover{
+    cursor: pointer;
+    background-color: #B55222;
+    color: #ffffff;
+}
+
+.optionsbutton{
+    color: #ffffff;
+}
+.optionsbutton ul{
+    display: flex;
+    padding: 40px;
+    justify-content: center;
+    list-style: none;
+    background-color: #003B26;
+}
+
+.optionsbutton li {
+    font-size: 20px;
+    margin: 0 15px;
+}
+
+.optionsbutton li:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+body {
+    overflow-x: hidden;
+    max-width: 100%;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.options li a, 
+.optionsbutton li a {
+    color: inherit;          /* Keeps the text beige/dark gray instead of blue */
+    text-decoration: none;   /* Removes the default underline */
+}
