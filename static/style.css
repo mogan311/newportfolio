@@ -735,3 +735,48 @@ html {
     color: inherit;          /* Keeps the text beige/dark gray instead of blue */
     text-decoration: none;   /* Removes the default underline */
 }
+
+
+/* from here claude have been given to me */
+
+
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .options { height: auto; padding-bottom: 10px; }
+  .options h1 { font-size: 28px; padding-top: 15px; display: block; }
+  .options ul { margin-left: 0; display: flex; flex-wrap: wrap; padding: 10px; }
+  .options li { padding: 8px 10px; font-size: 15px; }
+
+  /* Intro / Hero */
+  .intro { border-radius: 20px; margin-top: 130px; }
+  .name { font-size: 32px; margin-left: 20px; margin-top: 30px; }
+  .role { margin-left: 25px; }
+  .intro h3 { margin-left: 25px; }
+  .intro a { margin-left: 20px; font-size: 16px; }
+  .photo { position: static; width: 100%; height: auto; display: block; margin-top: 20px; border-radius: 0 0 20px 20px; }
+
+  /* About Me */
+  .beigebackgroundcolor h1,
+  .beigebackgroundcolor h2 { margin-left: 20px; font-size: 28px; }
+  .beigebackgroundcolor p,
+  .beigebackgroundcolor ul { margin-left: 20px; margin-right: 20px; font-size: 16px; }
+  .cgpabox { margin-left: auto; margin-right: auto; margin-top: 20px; }
+
+  /* Projects */
+  .projecttitlebox { width: 90%; margin-left: auto; margin-right: auto; display: block; }
+
+  /* Experience */
+  .Experiencebox { width: 90%; margin-left: auto; margin-right: auto; height: auto; }
+
+  /* Achievements */
+  .achievement-container { flex-direction: column; margin-left: 20px; margin-right: 20px; }
+  .achievementbox { width: 100%; height: auto; }
+
+  /* Contact */
+  .contactbox h1 { font-size: 40px; }
+  .messagebox { width: 90%; margin-left: auto; margin-right: auto; margin-top: 30px; height: auto; }
+  .messageinput { width: calc(100% - 40px); }
+  .description { width: calc(100% - 40px); }
+  .messagebox button { width: calc(100% - 36px); }
+}
