@@ -84,7 +84,7 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     };
 
     // 2. Send the data to your local Python server
-    fetch('http://127.0.0.1:5000/send-email', {
+    fetch('/send-email', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
