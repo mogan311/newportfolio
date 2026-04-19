@@ -1,3 +1,4 @@
+import os  # <-- CRITICAL: You need this to read Render environment variables
 from flask import Flask, request, jsonify, render_template
 from flask_cors import CORS
 import smtplib
@@ -20,11 +21,14 @@ def send_email():
     phone = data.get('user_phone', 'N/A')
     message = data.get('message')
 
-    # 2. Your Email Credentials
-    sender_email = "moganjana711@gmail.com" 
-    # Important: Do not use your normal Gmail password. 
-    # Go to Google Account -> Security -> 2-Step Verification -> App Passwords to generate a 16-letter code.
-    app_password = "hiaz eegy hxqf yikg" 
+    # 2. SECURELY GET CREDENTIALS FROM RENDER
+    sender_email = os.environ.get('EMAIL_USER')
+    app_password = os.environ.get('EMAIL_PASS')
+
+    # Safety check
+    if not sender_email or not app_password:
+        print("Error: Missing email credentials in environment variables.")
+        return jsonify({"status": "error", "message": "Server configuration error."}), 500
 
     # 3. Format the Email
     msg = MIMEText(f"Name: {name}\nEmail: {email}\nPhone: {phone}\n\nMessage:\n{message}")
@@ -39,7 +43,7 @@ def send_email():
             server.send_message(msg)
         return jsonify({"status": "success", "message": "Email sent!"}), 200
     except Exception as e:
-        print(e)
+        print(f"SMTP Error: {e}")
         return jsonify({"status": "error", "message": "Failed to send email."}), 500
 
 if __name__ == '__main__':
