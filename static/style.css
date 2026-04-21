@@ -790,7 +790,7 @@ html {
   /* Projects */
   .projectname{font-size: 40px; padding-bottom: 0px;}
   .projecttitlebox { width: 65%; margin-left: auto; margin-right: auto; display: block; margin-bottom: 35px; }
-  .academic{ font-size: 12.5px; padding-left: 5px; padding-right: 5px; }
+  .academic{ font-size: 12.5px; padding-left: 5px; padding-right: 5px; margin-right: 5px;}
   .devops { font-size: 12.5px; padding-left: 5px; padding-right: 5px; }
   .projecticonbox{
     width: 30px;
@@ -847,7 +847,9 @@ html {
   .description { width: calc(100% - 40px); }
   .messagebox button { width: calc(100% - 36px); }
 
-  .optionsbutton a{ font-size: 15px; padding: 0px; margin: 0px; }
+  .optionsbutton a{ font-size: 10px; padding: 0px; margin: 0px; }
+  .optionsbutton li{ padding: 10px; margin: 0px; }
+  .optionsbutton ul{ padding: 10px; margin: 0px; }
   .optionsbutton{width: 100%;}
 
 }
