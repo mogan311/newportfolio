@@ -777,9 +777,9 @@ html {
   .department {font-size: 15px;}
   .collegename{font-size: 12.5px;}
   .collegeplace{font-size: 10px;}
-  .cgpabox {padding: 5px; margin-left: 320px; width: 65px; height: 75px; margin-top: -200px; margin-right: 5px; }
+  .cgpabox {padding: 2.5px; margin-left: 320px; width: 65px; height: 75px; margin-top: -200px; margin-right: 2.5px; }
   .cgpabox h3 { margin-left: 15px; font-size: 12.5px;}
-  .cgpabox h4 { font-size: 19.5px; margin-left: 0px; padding-bottom: -20px; letter-spacing: 1px;}
+  .cgpabox h4 { font-size: 19.5px; margin-left: 0px; padding-bottom: -20px; letter-spacing: 1px; padding-right: 2px;}
 
   .skills{margin-top: -40px; font-size: 40px; margin-bottom: 0px;}
   .skillsouterbox{width: 250px; height: 350px; margin-bottom: 30px; }
