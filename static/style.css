@@ -771,17 +771,17 @@ html {
   .beigebackgroundcolor {width: 100%;}
   .beigebackgroundcolor h1,
   .beigebackgroundcolor h2 { margin-left: 20px; font-size: 28px; }
-  .beigebackgroundcolor p { margin-left: 15px; margin-right: 15px; font-size: 16px; }
+  .beigebackgroundcolor p { margin-left: 25px; margin-right: 25px; font-size: 16px; }
   .beigebackgroundcolor ul { margin-left: 5px; margin-right: 15px;}
   .degree { font-size: 20px; }
   .department {font-size: 15px;}
   .collegename{font-size: 12.5px;}
   .collegeplace{font-size: 10px;}
-  .cgpabox {padding: 2.5px; margin-left: 340px; width: 60px; height: 70px; margin-top: -130px; margin-right: 5px; }
+  .cgpabox {padding: 5px; margin-left: 340px; width: 65px; height: 75px; margin-top: -180px; margin-right: 5px; }
   .cgpabox h3 { margin-left: 15px; font-size: 12.5px;}
   .cgpabox h4 { font-size: 17.5px; margin-left: 0px; padding-bottom: -20px; letter-spacing: 1px;}
 
-  .skills{margin-top: -90px; font-size: 40px; margin-bottom: 0px;}
+  .skills{margin-top: -40px; font-size: 40px; margin-bottom: 0px;}
   .skillsouterbox{width: 250px; height: 350px; margin-bottom: 30px; }
   .skillsouterbox h1{ font-size: 25px; }
   .skillsouterbox span{ font-size: 15px; }
