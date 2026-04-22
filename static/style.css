@@ -499,11 +499,8 @@ body{
 }
 
 .achievename{
-    margin-top: 30px;
-    padding-top: 40px;
-    font-size: 40px;
-    margin-left: 60px;
-    margin-bottom: 50px;
+    margin-top: 60px;
+    margin-bottom: 60px;
 }
 
 .achievement-container{
