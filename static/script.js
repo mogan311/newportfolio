@@ -139,8 +139,6 @@ document.addEventListener("DOMContentLoaded", function() {
     localStorage.setItem('introAnimated', 'true');
 });
 
-localStorage.removeItem('introAnimated')
-
 
 
 // Grab the elements
