@@ -15,8 +15,6 @@ boxes.forEach(function(box) {
 });
 
 
-
-
 // Grab the Buttons
 var btnAcademic = document.querySelector('.academic');
 var btnDevops = document.querySelector('.devops');
@@ -109,4 +107,79 @@ document.getElementById('contact-form').addEventListener('submit', function(even
     });
 });
 
+
+// animating the frame here
+document.addEventListener("DOMContentLoaded", function() {
+
+    // Check if the animation has already played before
+    if (localStorage.getItem('introAnimated')) {
+        // Already played — just make all elements visible immediately, no animation
+        document.querySelectorAll('.intro a, .photo').forEach((el) => {
+            el.style.opacity = '1';
+            el.style.transform = 'none';
+            el.style.animation = 'none';
+        });
+        return; // Stop here, don't set up the observer
+    }
+
+    // First time visit — run the animation
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show-element');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    const animatedElements = document.querySelectorAll('.intro a, .photo');
+    animatedElements.forEach((el) => observer.observe(el));
+
+    // Mark as played so it never runs again
+    localStorage.setItem('introAnimated', 'true');
+});
+
+localStorage.removeItem('introAnimated')
+
+
+
+// Grab the elements
+const skillBoxes = document.querySelectorAll('.skillsinnerbox');
+const darkOverlay = document.getElementById('dark-overlay');
+const allPopups = document.querySelectorAll('.skill-popup');
+const body = document.body;
+
+// 1. Loop through every skill box on the page
+skillBoxes.forEach(box => {
+    box.addEventListener('click', () => {
+        // Find out which skill was clicked (e.g., "maven")
+        const targetSkill = box.getAttribute('data-target');
+        
+        // If it has a target, open the overlay and the specific popup
+        if (targetSkill) {
+            darkOverlay.classList.add('active');
+            body.classList.add('locked-screen');
+            
+            // Find the matching popup (e.g., "popup-maven") and show it
+            const targetPopup = document.getElementById(`popup-${targetSkill}`);
+            if (targetPopup) {
+                targetPopup.classList.add('active-popup');
+            }
+        }
+    });
+});
+
+// 2. When the dark screen is clicked: Hide overlay and ALL popups
+darkOverlay.addEventListener('click', (e) => {
+    // This makes sure clicking inside the white box doesn't close it!
+    if (e.target === darkOverlay) {
+        darkOverlay.classList.remove('active');
+        body.classList.remove('locked-screen');
+        
+        // Hide all popups so the next one opens clean
+        allPopups.forEach(popup => {
+            popup.classList.remove('active-popup');
+        });
+    }
+});
 

@@ -470,6 +470,11 @@ body{
     margin-bottom: 10px;
 }
 
+.Experiencebox p{
+    padding: 5px;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
 .Experiencebox h4{
     padding: 5px;
     font-size: 20px;
@@ -488,7 +493,9 @@ body{
 
 .Experiencebox a{
     font-size: 17.5px;
-    margin-bottom: 15px;
+    margin-bottom: 0px;
+    color: #C9972E;
+    text-decoration: none;
 }
 
 .Experiencebox i{
@@ -519,7 +526,7 @@ body{
     color: white;
     margin: 0;
     border-radius: 15px;
-    display: flex;
+    display: inline-block;
     flex-direction: row; /*fix*/
     flex-wrap: wrap;
     gap: 15px;
@@ -616,7 +623,7 @@ hr {
 }
 .contactbox a i{
     background: #C9972E;
-    display: inline;
+    display: inline-block;
     color: white;
     padding: 10px;
     border-radius: 10px;
@@ -644,17 +651,29 @@ hr {
     margin-bottom: 45px;
 }
 
+.messagebox h3{
+    margin-left: 20px;
+    padding-bottom: 2.5px;
+    padding-top: 2.5px;
+    font-family: 'Libre Franklin', sans-serif;
+    font-weight: 100;
+}
+
+.messagebox input{
+    color: #003B26;
+}
+
 .messageinput{
     
     margin-left: 20px;
-    font-size: 20px;
+    font-size: 15px;
     border: none;
-    margin-top: 20px;
+    margin-top: 5px;
     background-color: #B55222;
     color: #ffffff;
     border-bottom: solid wheat;
     width: 400px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 input:focus {
     outline: none;
@@ -736,8 +755,187 @@ html {
     text-decoration: none;   /* Removes the default underline */
 }
 
+#aws{
+    cursor: pointer;
+}
 
-/* from here claude have been given to me */
+/* --- THE DARK OVERLAY --- */
+#dark-overlay {
+    position: fixed;     /* Locks it to the screen */
+    top: 0;
+    left: 0;
+    width: 100vw;        /* 100% of the viewport width */
+    height: 100vh;       /* 100% of the viewport height */
+    background-color: rgba(0, 0, 0, 0.85); /* Black with 85% opacity */
+    z-index: 9999;       /* Puts it on top of EVERYTHING */
+    
+    /* Hidden by default with a smooth fade */
+    opacity: 0;
+    pointer-events: none; /* Prevents it from blocking clicks when hidden */
+    transition: opacity 0.4s ease;
+}
+
+/* When JavaScript adds this class, the overlay appears */
+#dark-overlay.active {
+    opacity: 1;
+    pointer-events: auto; /* Allows you to click the dark screen to close it */
+}
+
+/* When JavaScript adds this class to the body, you can't scroll */
+body.locked-screen {
+    overflow: hidden;
+}
+
+/* --- THE POPUP BOXES --- */
+.skill-popup {
+    display: none; /* Hide all popups by default */
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-color: #ffffff;
+    width: 300px;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+}
+
+/* When JS adds this class, the specific popup becomes visible */
+.skill-popup.active-popup {
+    display: block; 
+}
+
+.skill-popup h2 {
+    color: #333333;
+    font-size: 35px;
+    margin-bottom: 20px;
+    margin-left: -10px;
+}
+
+.awsflowchart h2 {
+    color: #333333;
+    font-size: 35px;
+    margin-top: 0px;
+    margin-bottom: 15px;
+    margin-left: 0px; /* Aligns the title nicely with the line */
+
+}
+
+/* --- THE VERTICAL LINE --- */
+.skill-tree {
+    position: relative;
+    padding-left: 50px; /* Creates space on the left for the line */
+}
+
+/* Draws the main vertical line */
+.skill-tree::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    bottom: 8px;     /* Stops the line slightly before the last item */
+    left: 15px;
+    width: 2px;       /* Thickness of the line */
+    background-color: #333333; /* Dark gray to match your image */
+    border-radius: 2px;
+    z-index: 1;
+}
+
+/* --- THE DOTS & TEXT --- */
+.skill-node {
+    position: relative;
+    padding: 10px 0;
+    font-size: 18px;
+    color: #0a6b4f;
+    font-family: 'Libre Franklin', sans-serif;
+}
+
+/* Draws the individual dots for each item */
+.skill-node::before {
+    content: '';
+    position: absolute;
+    left: -38.8px;      /* Pulls the dot perfectly over the vertical line */
+    top: 50%;           /* Centers the dot vertically with the text */
+    transform: translateY(-50%);
+    
+    width: 3px;
+    height: 3px;
+    background-color: #E3D2B4; /* Beige inner dot */
+    border: 4px solid #0a6b4f; /* Green outer ring */
+    border-radius: 50%;
+    z-index: 2;
+}
+
+/* Optional: Add a hover effect to make it feel interactive */
+.skill-node:hover {
+    color: #0a6b4f;
+    cursor: default;
+    transform: translateX(5px); /* Slightly nudges text to the right */
+    transition: all 0.3s ease;
+}
+
+
+
+
+
+
+
+/* Here is the animation of full site will be done below */
+/* 1. Keep elements hidden by default */
+.intro a, .photo {
+  opacity: 0;
+}
+
+/* 2. This class will be added by JavaScript when you scroll to it */
+.intro a.show-element, .photo.show-element {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+/* 3. Set the delays for Desktop (waiting for the typewriter effect) */
+.intro a.show-element:nth-of-type(1) { animation-delay: 1.1s; }
+.intro a.show-element:nth-of-type(2) { animation-delay: 1.3s; }
+.intro a.show-element:nth-of-type(3) { animation-delay: 1.5s; }
+.intro a.show-element:nth-of-type(4) { animation-delay: 1.7s; }
+.photo.show-element                  { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+.name {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    /* Added "forwards" to the blink animation so it stays hidden at the end */
+    animation: typing 2s steps(18, end) forwards,
+               blink 0.7s step-end 4 forwards; 
+    
+    /* Change base border to transparent so the cursor disappears when finished */
+    border-right: 2px solid transparent; 
+}
+
+@keyframes typing {
+    from { width: 0; }
+    /* Use 'ch' to limit width to the text length, not the full screen */
+    to   { width: 13.0ch; } 
+}
+
+@keyframes blink {
+    0%, 100% { border-color: transparent; }
+    50%      { border-color: #333333; }
+}
+
+
+
+
+
+
+
+/* from here the alignment have been done for mobile screen view */
 @media (max-width: 768px) {
 
   body {
@@ -839,7 +1037,8 @@ html {
   .contactbox { display: flex; flex-direction: column; padding: 20px; }
   .contactbox h1 { font-size: 40px; margin: 0px; margin-left:2.5px; }
   .contactbox h2 { margin: 0px; margin-left: 10px; margin-bottom: 25px; }
-  .contactbox a { margin: 0px; margin-bottom: 10px;}
+  .contactbox a { margin: 0px; margin-top: 10px; margin-bottom: 10px; font-size: 15px;}
+  .contactbox a i { text-align: center; padding: 0px; margin: 0px; width: 10px; height: 10px; font-size: 15px; padding-left: 7.5px; padding-right: 10px; padding-top: 7.5px; padding-bottom: 10px;}
   .messagebox { width: 85%; margin-left: 17.5px; margin-right: 0px; margin-top: 30px; margin-bottom: 30px; height: auto; }
   .messageinput { width: calc(100% - 40px); }
   .description { width: calc(100% - 40px); }
@@ -849,5 +1048,48 @@ html {
   .optionsbutton li{ padding: 10px; margin: 0px; }
   .optionsbutton ul{ padding: 10px; margin: 0px; }
   .optionsbutton{width: 100%;}
+
+  /* here we are going to the animate according to the mobile screen view */
+
+  .intro a.show-element:nth-of-type(1) { animation-delay: 0.1s; }
+  .intro a.show-element:nth-of-type(2) { animation-delay: 0.2s; }
+  .intro a.show-element:nth-of-type(3) { animation-delay: 0.3s; }
+  .intro a.show-element:nth-of-type(4) { animation-delay: 0.4s; }
+  .photo.show-element                  { animation-delay: 0.4s; }
+
+
+  /* --- SKILL POPUPS MOBILE ADJUSTMENTS --- */
+  
+  .skill-popup {
+    width:60%;      /* Allows the box to shrink on small phones */
+    padding: 30px 25px;   /* Reduces padding to save space */
+  }
+
+  .skill-popup h2 {
+    font-size: 20px;/* Smaller title */
+    margin-bottom: 15px;
+    margin-left: 0;       
+  }
+
+  .skill-node {
+    font-size: 12px; /* Smaller list text */
+    padding: 5px 0;
+  }
+
+  /* Re-aligning the line and dots for the smaller box */
+  .skill-tree {
+    padding-left:15px;   /* Brings the text closer to the line */
+  }
+
+  .skill-tree::before {
+    left:5px;           /* Moves the line closer to the left edge */
+  }
+
+  .skill-node::before {
+    width: 5px;          /* Shrinks the dot size */
+    height: 5px;
+    border-width: 3px;    /* Thinner green ring */
+    left: -14.0px;        /* Pulls the dot perfectly onto the new line position */
+  }
 
 }
