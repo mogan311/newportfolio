@@ -814,14 +814,6 @@ body.locked-screen {
     margin-left: -10px;
 }
 
-.awsflowchart h2 {
-    color: #333333;
-    font-size: 35px;
-    margin-top: 0px;
-    margin-bottom: 15px;
-    margin-left: 0px; /* Aligns the title nicely with the line */
-
-}
 
 /* --- THE VERTICAL LINE --- */
 .skill-tree {
