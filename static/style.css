@@ -759,6 +759,11 @@ html {
     cursor: pointer;
 }
 
+.github{
+    text-decoration: none;
+    color: white;
+}
+
 /* --- THE DARK OVERLAY --- */
 #dark-overlay {
     position: fixed;     /* Locks it to the screen */
