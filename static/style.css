@@ -765,6 +765,10 @@ html {
 
 }
 
+.github i{
+    padding-top: 5px;
+}
+
 /* --- THE DARK OVERLAY --- */
 #dark-overlay {
     position: fixed;     /* Locks it to the screen */
