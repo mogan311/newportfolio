@@ -663,6 +663,10 @@ hr {
     color: #003B26;
 }
 
+.messagebox textarea{
+    color: #003B26;
+}
+
 .messageinput{
     
     margin-left: 20px;
@@ -686,7 +690,7 @@ input::placeholder{
 
 .description{
     margin-left: 20px;
-    font-size: 20px;
+    font-size: 15px;
     margin-top: 20px;
     background-color: #B55222;
     color: #ffffff;
@@ -765,8 +769,10 @@ html {
 
 }
 
-.github i{
-    padding-top: 10px;
+.githubsymbol{
+    margin: 0px;
+    padding: 0px;
+    align-items: center;
 }
 
 /* --- THE DARK OVERLAY --- */
