@@ -68,9 +68,26 @@ window.addEventListener('scroll', function() {
 });
 
 document.getElementById('contact-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Stop page refresh
+    event.preventDefault();
 
     const btn = document.getElementById('send-button');
+
+    // Block disposable/spam email domains
+    const blockedDomains = [
+        'tempmail.com', 'throwaway.email', 'mailinator.com', 'guerrillamail.com',
+        'yopmail.com', 'sharklasers.com', 'trashmail.com', 'dispostable.com',
+        'maildrop.cc', 'spam4.me', 'fakeinbox.com', 'temp-mail.org',
+        '10minutemail.com', 'getnada.com', 'discard.email'
+    ];
+
+    const emailInput = document.querySelector('input[name="user_email"]').value.trim();
+    const emailDomain = emailInput.split('@')[1]?.toLowerCase();
+
+    if (!emailDomain || blockedDomains.includes(emailDomain)) {
+        alert('Please use a valid, permanent email address.');
+        return;
+    }
+
     btn.innerText = 'Sending...';
 
     // 1. Package the data exactly how Python expects it

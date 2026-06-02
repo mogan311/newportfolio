@@ -4,8 +4,14 @@ from flask_cors import CORS
 import smtplib
 from email.mime.text import MIMEText
 
+BLOCKED_DOMAINS = {
+    'tempmail.com', 'throwaway.email', 'mailinator.com', 'guerrillamail.com',
+    'yopmail.com', 'sharklasers.com', 'trashmail.com', 'dispostable.com',
+    'maildrop.cc', 'spam4.me', 'fakeinbox.com', 'temp-mail.org',
+    '10minutemail.com', 'getnada.com', 'discard.email'
+}
+
 app = Flask(__name__)
-# Enable CORS to allow your frontend to talk to this backend
 CORS(app)
 
 @app.route('/')
@@ -20,6 +26,11 @@ def send_email():
     email = data.get('user_email')
     phone = data.get('user_phone', 'N/A')
     message = data.get('message')
+
+    # Block disposable/spam domains
+    domain = email.split('@')[-1].lower() if '@' in email else ''
+    if not domain or domain in BLOCKED_DOMAINS:
+        return jsonify({"status": "error", "message": "Invalid email domain."}), 400
 
     # 2. SECURELY GET CREDENTIALS FROM RENDER
     sender_email = os.environ.get('EMAIL_USER')
